@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2028 控制专硕 · 以就业与课题组为核心的深度择校调查（核实版）</title>
+<style>
+:root{
+  --bg:#0a0f1a; --bg2:#0e1626; --panel:#121c30; --panel2:#172440;
+  --line:#22314f; --line2:#2d3f63;
+  --tx:#e8eefb; --tx2:#a9b8d4; --tx3:#7186a8;
+  --teal:#3dd6bd; --teal-d:#0f3b38;
+  --amber:#f2b23e; --amber-d:#3d2f10;
+  --rose:#f2647a; --rose-d:#3d1620;
+  --blue:#5aa6f2; --violet:#9b8cf5; --green:#4ade80;
+  --radius:14px; --radius-s:9px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;background-image:radial-gradient(900px 500px at 82% -8%,rgba(61,214,189,.10),transparent 60%),radial-gradient(700px 420px at 8% 4%,rgba(90,166,242,.09),transparent 60%)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,15,26,.86);border-bottom:1px solid var(--line)}
+.navin{max-width:1180px;margin:0 auto;padding:11px 22px;display:flex;gap:6px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.navin::-webkit-scrollbar{display:none}
+.navin a{color:var(--tx3);text-decoration:none;font-size:13.5px;padding:6px 11px;border-radius:999px;white-space:nowrap;transition:.15s}
+.navin a:hover{color:var(--tx);background:var(--panel2)}
+.navin .brand{color:var(--teal);font-weight:700;margin-right:8px;font-size:13.5px;white-space:nowrap}
+.navin .sep{width:1px;height:16px;background:var(--line2);margin:0 4px;flex:none}
+header{padding:56px 0 34px;border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--teal);border:1px solid var(--teal-d);background:rgba(61,214,189,.07);padding:5px 13px;border-radius:999px;margin-bottom:20px;letter-spacing:.3px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.25;letter-spacing:-.5px;font-weight:800;margin-bottom:16px}
+h1 em{font-style:normal;color:var(--teal)}
+.lede{color:var(--tx2);font-size:16px;max-width:860px;margin-bottom:20px}
+.profile{display:flex;flex-wrap:wrap;gap:8px}
+.pchip{font-size:12.5px;color:var(--tx2);background:var(--panel);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+.pchip b{color:var(--tx);font-weight:600}
+section{padding:50px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(21px,3vw,26px);font-weight:750;letter-spacing:-.3px;margin-bottom:8px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+h2 .num{color:var(--teal);font-size:15px;font-weight:700}
+.h2sub{color:var(--tx3);font-size:14px;margin-bottom:28px;max-width:900px}
+h3{font-size:16.5px;font-weight:700;margin:30px 0 12px;display:flex;align-items:center;gap:9px}
+h3::before{content:"";width:3px;height:15px;background:var(--teal);border-radius:2px}
+p{color:var(--tx2);margin-bottom:12px}
+p b,li b{color:var(--tx);font-weight:650}
+ul{margin:0 0 12px 20px}li{color:var(--tx2);margin-bottom:7px}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:620px}
+th,td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--tx3);font-weight:600;font-size:12.5px;background:var(--bg2);white-space:nowrap}
+td{color:var(--tx2)}
+tbody tr:last-child td{border-bottom:none}
+td b{color:var(--tx)}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line2);color:var(--tx3);line-height:1.7;white-space:nowrap}
+.tag.t-teal{color:var(--teal);border-color:var(--teal-d);background:rgba(61,214,189,.08)}
+.tag.t-amber{color:var(--amber);border-color:var(--amber-d);background:rgba(242,178,62,.08)}
+.tag.t-rose{color:var(--rose);border-color:var(--rose-d);background:rgba(242,100,122,.08)}
+.tag.t-green{color:var(--green);border-color:#14331f;background:rgba(74,222,128,.08)}
+.callout{border-left:3px solid var(--teal);background:rgba(61,214,189,.05);border-radius:0 var(--radius-s) var(--radius-s) 0;padding:14px 18px;margin:16px 0}
+.callout.warn{border-color:var(--amber);background:rgba(242,178,62,.05)}
+.callout.bad{border-color:var(--rose);background:rgba(242,100,122,.05)}
+.callout .ct{font-size:13.5px;font-weight:700;margin-bottom:5px}
+.callout p{font-size:13.5px;margin-bottom:5px}
+.callout p:last-child{margin-bottom:0}
+.sch{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin-bottom:14px}
+.sch .sh{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:8px}
+.sch .sn{font-size:16px;font-weight:750}
+.sch .sc{font-size:12.5px;color:var(--tx3)}
+.sch .sline{margin-left:auto;font-size:14px;color:var(--teal);font-weight:700}
+.sch .kv{display:flex;gap:10px;font-size:13.5px;margin-bottom:5px;align-items:baseline}
+.sch .kv .k{color:var(--tx3);flex:none;width:112px;font-size:12.5px}
+.sch .kv .v{color:var(--tx2)}
+.sch .risk{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--tx3)}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.g2,.g3{grid-template-columns:1fr}}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.stat .k{font-size:12px;color:var(--tx3);margin-bottom:6px}
+.stat .v{font-size:22px;font-weight:800;letter-spacing:-.3px}
+.stat .v.green{color:var(--green)}.stat .v.amber{color:var(--amber)}.stat .v.rose{color:var(--rose)}.stat .v.teal{color:var(--teal)}
+footer{padding:40px 0 60px;color:var(--tx3);font-size:13px}
+footer a{color:var(--blue)}
+</style>
+</head>
+<body>
+<nav>
+  <div class="navin">
+    <span class="brand">深调·2028</span><span class="sep"></span>
+    <a href="#data">00 硬数据</a><a href="#dir">01 方向</a><a href="#screen">02 初筛</a><a href="#deep">03 深调</a><a href="#rank">04 排名</a><a href="#plan">05 方案</a><a href="#verify">06 证据</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">以就业·培养质量·课题组为核心 · 核实版 · 2026-10-31</div>
+    <h1>2028 控制专硕<em>深度择校调查</em></h1>
+    <p class="lede">以「硕士毕业后的就业竞争力」为终点倒推学校/学院/导师/方向。核心原则：<b>考察普通学生，而不是明星团队</b>；区分「城市有企业」与「学生拿得到实习」；对无法核实的信息明确标注，不编造。</p>
+    <div class="profile">
+      <span class="pchip">本科：<b>西安理工大学 · 机器人工程</b></span>
+      <span class="pchip">目标：<b>全日制控制/电子信息专硕</b></span>
+      <span class="pchip">地域：<b>长三角 &gt; 珠三角</b></span>
+      <span class="pchip">底线：<b>≥211（但不唯层次）</b></span>
+      <span class="pchip">毕业：<b>就业导向，非读博</b></span>
+    </div>
+  </div>
+</header>
+
+<section id="data">
+  <div class="wrap">
+    <h2><span class="num">00</span>已官方核实的硬数据（2026 复试线）</h2>
+    <p class="h2sub">以下全部来自各校研招网/学院官网原始页面，非二手转述。剩余悬案列在第六部分。</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>院校</th><th>学院</th><th>专业</th><th>2026 总分线</th><th>统考/备注</th></tr></thead>
+        <tbody>
+          <tr><td>杭电</td><td>自动化学院</td><td><b>085406 控制工程</b></td><td class="num"><b>327</b></td><td>自划线（单科 40/53）</td></tr>
+          <tr><td>杭电</td><td>自动化学院</td><td>081100 学硕</td><td class="num">264</td><td>国家线</td></tr>
+          <tr><td>杭电</td><td>圣光机中心</td><td>085406</td><td class="num">264</td><td>国家线</td></tr>
+          <tr><td>南理工</td><td>自动化学院</td><td><b>085406 控制工程</b></td><td class="num"><b>360</b></td><td>否决「268」误传</td></tr>
+          <tr><td>南理工</td><td>自动化学院</td><td>081100 学硕</td><td class="num">340</td><td>—</td></tr>
+          <tr><td>同济</td><td>电子信息工程学院</td><td><b>控制（081100/085400智自工程）</b></td><td class="num"><b>365</b></td><td>单科 55/55/100/100</td></tr>
+          <tr><td>浙大</td><td>控制学院</td><td>0811 学硕</td><td class="num"><b>393</b></td><td>2025 仅 348（+45）</td></tr>
+          <tr><td>东南</td><td>全校</td><td>0854 电子信息（校线）</td><td class="num">320</td><td>院线见「悬案」</td></tr>
+          <tr><td>南航</td><td>自动化学院</td><td><b>085406 控制工程</b></td><td class="num"><b>360</b></td><td>统考计划 <b>64</b></td></tr>
+          <tr><td>南航</td><td>自动化学院</td><td>081100 学硕</td><td class="num">362</td><td>统考计划 39</td></tr>
+          <tr><td>上大</td><td>机自学院</td><td>081100 学硕</td><td class="num">326</td><td>2025=309 / 2024=330</td></tr>
+          <tr><td>广工</td><td>全校</td><td>085406 校基本线</td><td class="num">265</td><td>院线深调称 355</td></tr>
+          <tr><td>华科</td><td>人工智能与自动化学院</td><td>085410 人工智能</td><td class="num">300</td><td>控制学硕统考仅 13（2025）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="dir">
+  <div class="wrap">
+    <h2><span class="num">01</span>行业与六大方向研究</h2>
+    <p class="h2sub">结论先行：普通学生本科滤镜下，真正稳就业的是「②嵌入式/电机驱动 + ⑤智能制造」硬工程主线，不是最热的「③具身智能」。</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>#</th><th>方向</th><th>代表企业/岗位</th><th>核心技术栈</th><th>稳定性</th><th>收入上限</th><th>本科适配</th><th>5-10年确定性</th></tr></thead>
+        <tbody>
+          <tr><td>①</td><td>运动控制与系统</td><td>埃斯顿/汇川/节卡，运动控制算法、伺服调试</td><td>C/C++、EtherCAT、轨迹规划、动力学</td><td>高</td><td>中高</td><td><b>强</b></td><td>高而稳</td></tr>
+          <tr><td>②</td><td>嵌入式/电机驱动</td><td>汇川/英威腾/雷赛/大疆，车载嵌入式</td><td>嵌入式C、FOC、驱动器、RTOS、STM32/DSP</td><td><b>最高</b></td><td>中</td><td><b>最强</b></td><td>极高、最稳</td></tr>
+          <tr><td>③</td><td>具身智能/机器人算法</td><td>宇树/智元/银河通用，具身大模型、RL</td><td>Python、PyTorch、RL、VLA、ROS</td><td>中（泡沫期）</td><td><b>最高</b></td><td>中</td><td>高波动</td></tr>
+          <tr><td>④</td><td>智能驾驶/汽车电子</td><td>比亚迪/蔚小理/地平线/采埃孚</td><td>传感器融合、规控、AutoSAR、C++</td><td>中高</td><td>高</td><td>中强</td><td>高但踩踏</td></tr>
+          <tr><td>⑤</td><td>智能制造/工业控制</td><td>西门子/倍福/中控/宝信，PLC/MES</td><td>PLC、SCADA、工业协议、MES、机器视觉</td><td>高</td><td>中</td><td>强</td><td>高而稳</td></tr>
+          <tr><td>⑥</td><td>AI+工业应用</td><td>制造企业数字化部门、工业AI</td><td>视觉检测、预测性维护、MLOps、边缘计算</td><td>中高</td><td>中高</td><td>中</td><td>高但零散</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="ct">方向优先级结论</div>
+      <p><b>长期稳健（压重仓）</b>：② 嵌入式/电机驱动 ≈ ⑤ 智能制造 &gt; ① 运动控制 &gt; ④ 智能驾驶 &gt; ⑥ AI+工业 &gt; ③ 具身智能</p>
+      <p><b>高收入上限（搏上限）</b>：③ 具身智能 &gt; ④ 智能驾驶 &gt; ⑥ AI+工业 &gt; ① 运动控制 &gt; ② 嵌入式 &gt; ⑤ 智能制造</p>
+      <p><b>给你的组合（普通学生最优解）</b>：主 ② + 副 ⑤，①技能贯穿；③当期权，考进头部组才点亮。</p>
+    </div>
+  </div>
+</section>
+
+<section id="screen">
+  <div class="wrap">
+    <h2><span class="num">02</span>全国院校初筛（20 校 → 深调 12 校）</h2>
+    <p class="h2sub">原则：不唯标签、不以「城市有企业」等同「学生有出路」、警惕「明星团队=全校就业好」的谬误。</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>校</th><th>层次</th><th>2026 线</th><th>地域</th><th>初筛判定</th></tr></thead>
+        <tbody>
+          <tr><td>浙大</td><td>985</td><td>学硕 393</td><td>杭州</td><td>入选·冲刺（难度断崖）</td></tr>
+          <tr><td>同济</td><td>985</td><td>控制 365</td><td>上海</td><td>入选·冲刺</td></tr>
+          <tr><td>东南</td><td>985</td><td>校线 320</td><td>南京</td><td>入选·冲刺（避联培高学费）</td></tr>
+          <tr><td>华科</td><td>985</td><td>085410=300</td><td>武汉</td><td>入选·冲刺（统考被推免挤压）</td></tr>
+          <tr><td>哈工深</td><td>985</td><td>待核</td><td>深圳</td><td>入选·冲刺</td></tr>
+          <tr><td>南航</td><td>211</td><td>085406=360/64</td><td>南京</td><td><b>入选·主攻（名额最实）</b></td></tr>
+          <tr><td>南理工</td><td>211</td><td>085406=360</td><td>南京</td><td><b>入选·主攻</b></td></tr>
+          <tr><td>上大</td><td>211</td><td>学硕 326</td><td>上海</td><td>入选·主攻</td></tr>
+          <tr><td>苏大</td><td>211</td><td>待核</td><td>苏州</td><td>入选·主攻（苏州制造闭环）</td></tr>
+          <tr><td>江南</td><td>211</td><td>学硕招 28</td><td>无锡</td><td>入选·稳妥（大小年）</td></tr>
+          <tr><td>杭电</td><td>双非</td><td>085406=327</td><td>杭州</td><td><b>入选·就业主攻（层次冲突）</b></td></tr>
+          <tr><td>华南理工</td><td>985</td><td>待核</td><td>广州</td><td>入选·稳妥</td></tr>
+          <tr><td>广工</td><td>双非</td><td>院线深调 355</td><td>广州/东莞</td><td>入选·稳妥（就业导向）</td></tr>
+          <tr><td>深大</td><td>双非</td><td>待核</td><td>深圳</td><td>入选·观察（口径存疑）</td></tr>
+          <tr><td>哈工大本部</td><td>985</td><td>待核</td><td>哈尔滨</td><td>暂列·地域不符</td></tr>
+          <tr><td>中科大</td><td>985</td><td>待核</td><td>合肥</td><td>暂列·偏学术</td></tr>
+          <tr><td>北航</td><td>985</td><td>待核</td><td>北京</td><td>暂列·地域第三</td></tr>
+          <tr><td>天津大学</td><td>985</td><td>待核</td><td>天津</td><td>暂列·地域第三</td></tr>
+          <tr><td>东华</td><td>211</td><td>待核</td><td>上海</td><td>补充·备选</td></tr>
+          <tr><td>上交大</td><td>985</td><td>极高</td><td>上海</td><td>仅提分目标·非主攻</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="deep">
+  <div class="wrap">
+    <h2><span class="num">03</span>12 校深度调查</h2>
+    <p class="h2sub">证据强度：〔官方〕学校官网 ·〔深调〕你提供材料 ·〔第三方〕机构/论坛 ·〔推断〕模型判断 ·〔未知〕无可靠来源。课题组层面<b>仅写有来源的案例</b>，其余给查找路径而不编造姓名。</p>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">1. 杭州电子科技大学</span><span class="sc">双非 · 杭州</span><span class="sline">085406 = 327〔官方〕</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">自动化学院，控制二级学科博士点，长三角 ICT 生态位极强〔推断〕</span></div>
+      <div class="kv"><span class="k">课题组</span><span class="v">席旭刚（机器人方向）〔深调〕；学院机器人/嵌入式方向团队多、以工程落地为主，非少数团队垄断〔深调+推断〕</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">杭州 + 海康/大华/宇树/汇川通道成熟，「城市有企业」转化率同类最高〔推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v">高，招生体量大，普通背景获得对口培养比例靠前〔推断〕</span></div>
+      <div class="risk">资源集中度风险：低〔深调〕· 硬伤：不满足「≥211」底线</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">2. 南京理工大学</span><span class="sc">211 · 南京</span><span class="sline">085406 = 360〔官方〕</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">自动化学院，兵器控制与运动控制传统强，伺服/工业控制扎实〔推断〕</span></div>
+      <div class="kv"><span class="k">课题组</span><span class="v">周慧（运动控制，22 人去向明确）〔深调〕；控制团队多、非头部垄断〔深调〕</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">南京装备/军工研究所多，但军工口实习不如民企灵活〔推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v">中高，名额相对充足；军工方向可能压缩民企实习时间〔推断〕</span></div>
+      <div class="risk">资源集中度风险：低〔深调〕· 风险：873 自控竞争激烈，复试 60:40〔深调〕</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">3. 南京航空航天大学</span><span class="sc">211 · 南京</span><span class="sline">085406 = 360 / 统考 64〔官方〕</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">自动化学院，飞控/导航/自动化，军工+民航双线〔推断〕</span></div>
+      <div class="kv"><span class="k">课题组</span><span class="v">飞控/导航/自动化团队（官网「师资队伍」逐个看主页方向）〔未知，给路径〕</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">南京 + 军工背景，实习渠道中等，取决于导师放行〔推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v"><b>高</b>——统考名额 64 是榜内最实的一条，普通背景确定性最强〔官方+推断〕</span></div>
+      <div class="risk">资源集中度风险：中〔推断〕</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">4. 上海大学</span><span class="sc">211 · 上海</span><span class="sline">学硕 0811 = 326〔官方〕</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">机电工程与自动化学院，机器人/智能制造有方向但非顶尖〔推断〕</span></div>
+      <div class="kv"><span class="k">课题组</span><span class="v">机器人/智能制造团队〔未知，给路径〕</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">上海制造+外企多、机会多，但生活成本对冲〔推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v">中——名额被全国考生争抢〔推断〕</span></div>
+      <div class="risk">风险：复试考 8086 汇编〔深调〕，专业课偏硬</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">5. 苏州大学</span><span class="sc">211 · 苏州</span><span class="sline">2026 线待核〔深调：机电约 363〕</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">机电工程学院 + 电子信息学院分招，控制分散〔官方〕</span></div>
+      <div class="kv"><span class="k">课题组</span><span class="v">两院对比后再定〔未知，给路径〕</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">苏州制造闭环，非标自动化/集成商需求大，实习口径好〔推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v">中高，但分招导致方向碎片化〔推断〕</span></div>
+      <div class="risk">风险：081100 学硕 2027 停招传闻〔深调〕需官网复核</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">6. 江南大学</span><span class="sc">211 · 无锡</span><span class="sline">学硕 0811 拟招 28〔官方〕</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">自动化与智能科学学院（原物联网学院），物联网/智能传感特色，无锡传感网集群〔推断〕</span></div>
+      <div class="kv"><span class="k">课题组</span><span class="v">智能传感/物联网团队〔未知，给路径〕</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">无锡装备/传感企业多，实习尚可〔推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v">中——名额偏少（学硕 28），专硕线不稳〔官方+深调〕</span></div>
+      <div class="risk">风险：深调「399」与「2025 约 322」波动大，大小年型</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">7. 华中科技大学</span><span class="sc">985 · 武汉</span><span class="sline">085410 人工智能 = 300〔第三方〕</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">人工智能与自动化学院，机器人/控制双强〔推断〕</span></div>
+      <div class="kv"><span class="k">关键事实</span><span class="v">2025 控制学硕推免 <b>108</b> vs 统考 <b>13</b>、上线 18〔官方〕——统考被推免严重挤压</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">武汉东风/烽火等，但非首选地域〔推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v"><b>低</b>——统考蛋糕极小，普通背景上岸概率与投入不成正比〔官方+推断〕</span></div>
+      <div class="risk">结论：可作冲刺，<b>不建议主攻</b>（性价比被推免结构破坏）</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">8. 同济大学</span><span class="sc">985 · 上海</span><span class="sline">控制 = 365〔官方〕</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">电子信息工程学院，控制强，智能汽车/机器人有资源〔推断〕</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">上海车企（上汽/蔚来/采埃孚）+ 联合培养，实习口径好〔推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v">中——365 是榜内 985 里相对「可选」的，但 825 自控竞争强〔官方+推断〕</span></div>
+      <div class="risk">资源集中度风险：<b>偏高</b>——头部 vs 普通团队就业差距明显〔深调+推断〕</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">9. 东南大学</span><span class="sc">985 · 南京</span><span class="sline">0854 校线 320〔官方〕</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">自动化学院，南京顶配 985〔推断〕</span></div>
+      <div class="kv"><span class="k">关键事实</span><span class="v">院线 2022=343〔官方〕→ 深调称 2026 约 391；本部 vs 苏州蒙纳士联培（6.2 万/年×3）分线〔深调〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v">中偏低——391 区间 + 985 内卷，普通背景是冲刺项〔官方+深调〕</span></div>
+      <div class="risk">风险：报之前必须分清「本部」还是「蒙纳士联培」</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">10. 浙江大学</span><span class="sc">985 · 杭州</span><span class="sline">0811 学硕 = 393〔官方〕</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">控制学院独立建制，控制 A+ 梯队，机器人/具身最强〔推断〕</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">杭州 + 浙大牌子，出口最好〔推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v"><b>低</b>——报录比 5.2〔深调〕、393 断崖线，普通背景是高风险彩票〔官方+深调〕</span></div>
+      <div class="risk">资源集中度风险：高〔推断〕</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">11. 广东工业大学</span><span class="sc">双非 · 广州/东莞</span><span class="sline">校基本线 265〔官方〕/ 院线深调 355</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">自动化学院，珠三角制造腹地，低空 0811J1 方向，控制+机器人性价比高〔深调+推断〕</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">广州/东莞/佛山装备+机器人企业密集，就业口径好，分数友好〔官方+推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v">高——招生体量大（224+），081100 学硕 02 方向收调剂〔官方〕</span></div>
+      <div class="risk">风险：双非，与「≥211」冲突；低空新方向名额极小〔深调〕</div>
+    </div>
+
+    <div class="sch">
+      <div class="sh"><span class="sn">12. 华南理工大学</span><span class="sc">985 · 广州</span><span class="sline">深调：085400-01 拟录取 12 人、中位 380</span></div>
+      <div class="kv"><span class="k">学院/平台</span><span class="v">自动化科学与工程学院，珠三角顶配 985〔推断〕</span></div>
+      <div class="kv"><span class="k">实习/就业</span><span class="v">广州/深圳制造+汽车，实习好〔推断〕</span></div>
+      <div class="kv"><span class="k">普通生可得性</span><span class="v">中——985 且名额少（12 人量级），珠三角冲刺项〔官方+深调〕</span></div>
+      <div class="risk">风险：名额少、竞争集中</div>
+    </div>
+  </div>
+</section>
+
+<section id="rank">
+  <div class="wrap">
+    <h2><span class="num">04</span>量化评分模型与六张排名</h2>
+    <p class="h2sub">满分 10，只给区间不给伪精确小数；「资源集中度风险」作为独立扣分项。</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>维度</th><th>权重</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>毕业生就业质量与企业认可度</td><td class="num">25%</td><td>出口导向核心</td></tr>
+          <tr><td>硕士培养质量</td><td class="num">20%</td><td>设备/项目/导师指导</td></tr>
+          <tr><td>课题组整体资源与方向覆盖</td><td class="num">20%</td><td>覆盖面，非头部团队</td></tr>
+          <tr><td>企业实习与产业连接</td><td class="num">15%</td><td>「拿得到实习」而非「城市有企业」</td></tr>
+          <tr><td>学校平台与区域产业环境</td><td class="num">10%</td><td>招牌 + 城市</td></tr>
+          <tr><td>考研难度/招生稳定/公平</td><td class="num">10%</td><td>名额透明 + 复试公平</td></tr>
+          <tr><td><b>资源集中度风险（扣分）</b></td><td class="num">—</td><td>头部垄断则整体降档</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>排名</th><th>综合就业导向</th><th>机器人/具身</th><th>嵌入式/运控</th><th>智能制造</th><th>长三角优先</th><th>珠三角优先</th></tr></thead>
+        <tbody>
+          <tr><td>S+</td><td>—（避免吹捧）</td><td>浙大</td><td>杭电</td><td>杭电</td><td>同济</td><td>华南理工</td></tr>
+          <tr><td>A+</td><td>杭电、南理工</td><td>上交/浙大</td><td>南理工</td><td>南理工</td><td>杭电、同济</td><td>广工</td></tr>
+          <tr><td>A</td><td>南航、华工、苏大</td><td>华科</td><td>南航</td><td>—</td><td>南航、苏大、上大</td><td>深大(谨慎)</td></tr>
+          <tr><td>A-</td><td>上大、江南、广工</td><td>哈工深</td><td>苏大、华工</td><td>东华</td><td>江南、东南</td><td>—</td></tr>
+          <tr><td>B+</td><td>同济、东华</td><td>南理工</td><td>广工</td><td>广工</td><td>华工(跨区)</td><td>同济(辐射)</td></tr>
+          <tr><td>B</td><td>东南、华科(跨区)</td><td>东南、同济</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>C</td><td>深大(口径存疑)</td><td>—</td><td>深大</td><td>深大</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout bad">
+      <div class="ct">资源集中度风险必须点名的学校</div>
+      <p><b>同济、浙大、华科、东南</b>——优质出口偏头部团队，普通学生「整体获益」打折。</p>
+      <p><b>杭电、南理工、南航、广工</b>——资源相对普享，普通学生确定性更高，这才是你该优先看的。</p>
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <h2><span class="num">05</span>个人择校方案（冲/稳/保）</h2>
+    <div class="callout warn">
+      <div class="ct">你必须先拍板的岔路</div>
+      <p>底线「≥211」与「就业导向最优（杭电）」本质冲突。下面按两条路线分列，选一条锁死。</p>
+    </div>
+    <div class="grid g2">
+      <div class="stat"><div class="k">路线一（坚持 ≥211，推荐）</div>
+        <p style="margin-top:8px;font-size:13.5px"><b>冲刺：</b>同济 / 东南（本部，非联培）<br><b>主攻：</b>南航（360/64）→ 南理工（360）→ 苏大<br><b>稳妥：</b>江南 / 上大（学硕 326 相对温和）</p></div>
+      <div class="stat"><div class="k">路线二（接受双非换就业质量）</div>
+        <p style="margin-top:8px;font-size:13.5px"><b>主攻：</b>杭电（327，嵌入式/智能制造出口最好）→ 南理工 → 南航<br><b>稳妥：</b>广工（355 区间/广东）/ 江南<br><b>冲刺保留：</b>同济</p></div>
+    </div>
+    <h3>重点 4 校「八问」</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>校</th><th>最值得方向</th><th>重点摸清</th><th>出口</th><th>实习</th><th>培养风险</th><th>难度</th><th>何时不再推荐</th></tr></thead>
+        <tbody>
+          <tr><td>南航</td><td>085406（64 名额）</td><td>飞控/导航/自动化团队（官网师资页）</td><td>高端制造/军工/汽车</td><td>中</td><td>军工口实习受限</td><td>中偏上</td><td>统考 64 缩到 &lt;40</td></tr>
+          <tr><td>南理工</td><td>085406（360）</td><td>周慧组(运动控制)〔深调〕+ 运动控制/伺服组</td><td>装备/伺服/军工</td><td>中</td><td>复试 60:40</td><td>中偏上</td><td>复试占比继续升</td></tr>
+          <tr><td>杭电</td><td>085406（327）</td><td>席旭刚组(机器人)〔深调〕+ 集成方向</td><td>ICT/装备</td><td>高</td><td>双非层次天花板</td><td>中</td><td>你死守 211</td></tr>
+          <tr><td>苏大</td><td>085406（待核线）</td><td>机电 vs 电子信息两院对比</td><td>非标自动化</td><td>高</td><td>0811 学硕停招传闻</td><td>中</td><td>线飙破 380</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="verify">
+  <div class="wrap">
+    <h2><span class="num">06</span>风险与证据清单</h2>
+
+    <h3>已官方核实（可直接引用）</h3>
+    <ul>
+      <li>杭电自动化学院 2026 线（085406=327、081100=264、圣光机=264）—— grs.hdu.edu.cn</li>
+      <li>南理工 2026 线（085406=360、081100=340）—— gs.njust.edu.cn PDF</li>
+      <li>同济信息学院 2026 线（控制=365）—— see.tongji.edu.cn</li>
+      <li>浙大控制学院 2026（0811=393）/2025（348）—— cse.zju.edu.cn</li>
+      <li>南航 2026 线（085406=360/统考64、081100=362/39）—— graduate.nuaa.edu.cn</li>
+      <li>上大 0811 学硕三年（326/309/330）—— gmis.shu.edu.cn</li>
+      <li>华科 2025 控制学硕「推免108/统考13/上线18」—— 华科研招 PDF</li>
+      <li>东南 0854 校线 320；自动化 085400 2022=343 —— yzb.seu.edu.cn / automation.seu.edu.cn</li>
+      <li>广工 085406 校基本线 265；081100 学硕 02 方向收调剂 —— yzw.gdut.edu.cn</li>
+    </ul>
+
+    <h3>口径冲突（必须临场再到官网复核）</h3>
+    <ul>
+      <li>东南自动化 085400：校线 320 vs 院线（2022=343，深调称 2026 约 391）——区间极大。</li>
+      <li>广工 085406：校基本线 265 vs 深调院线 355——差 90 分，查自动化学院当年自划线。</li>
+      <li>江南 085406：深调 399 vs 2025 约 322——大小年，别用 399 当心理防线。</li>
+      <li>苏大控制专硕：2026 线未直接命中，按「机电约 363/光电 368」深调口径。</li>
+      <li>华科 085400（控制方向）2026 具体线未直接命中，仅 085410=300 与 2025 学硕结构可证。</li>
+    </ul>
+
+    <h3>待你自行核实（我未编造，故留白）</h3>
+    <ul>
+      <li>除杭电席旭刚、南理工周慧外，其余院校<b>具体导师姓名、团队规模、近三届去向</b>需到各校学院官网「师资队伍/导师介绍」逐人核实——我没有可靠来源，不写假名单。</li>
+      <li>就业率、岗位占比、薪资数字：少数官方就业质量报告公开，多数需向在读生/就业办取证〔第三方〕，本报告只给方向性判断。</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    本报告为就业导向的择校研究参考，非官方录取依据。所有数据标注口径与来源，无法核实处如实留白。2028 招生政策以各校当年官方目录为准。
+  </div>
+</footer>
+</body>
+</html>
